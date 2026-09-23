@@ -48,12 +48,26 @@ Em **APIs e serviços → Tela de permissão OAuth → Branding**:
 
 | Campo | Valor |
 |---|---|
-| Página inicial do aplicativo | `https://SEU-USUARIO.github.io/facelessos/` |
-| Link da Política de Privacidade | `https://SEU-USUARIO.github.io/facelessos/privacidade.html` |
-| Link dos Termos de Serviço | `https://SEU-USUARIO.github.io/facelessos/termos.html` |
-| Domínios autorizados | `github.io` |
+| Página inicial do aplicativo | `https://SEU-USUARIO.github.io/PROJETO/` |
+| Link da Política de Privacidade | `https://SEU-USUARIO.github.io/PROJETO/privacidade.html` |
+| Link dos Termos de Serviço | `https://SEU-USUARIO.github.io/PROJETO/termos.html` |
+| Domínios autorizados | `SEU-USUARIO.github.io` |
+
+**Atenção ao domínio autorizado:** use o host completo
+(`SEU-USUARIO.github.io`), não `github.io`. O Google recusa `github.io` com a
+mensagem "precisa ser um domínio privado de nível superior", porque ele consta
+na Public Suffix List — qualquer pessoa pode criar um subdomínio ali, então
+autorizá-lo inteiro seria autorizar o GitHub Pages do mundo todo.
 
 Salve e vá em **Público-alvo → PUBLICAR APP**.
+
+### Se reclamar que o domínio não está verificado
+
+A propriedade verificada no Search Console precisa cobrir o host, não apenas
+o subdiretório do projeto. Se `https://SEU-USUARIO.github.io/PROJETO/` não for
+aceito, verifique também a raiz `https://SEU-USUARIO.github.io/` — para isso é
+preciso um repositório chamado exatamente `SEU-USUARIO.github.io`, com um
+`index.html` carregando a mesma meta tag de verificação.
 
 Não suba logotipo: o próprio console avisa que isso força o envio para
 verificação.
